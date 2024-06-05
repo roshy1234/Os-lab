@@ -18,8 +18,8 @@ void main() {
     }
     printf("Gantt Chart -- \n");
     while(1) {
-        int j, min_at = -1;
-        for(j = 0; j < n; j++) {
+        int min_at = -1;
+        for(int j = 0; j < n; j++) {
             if(P[j].bt > 0) {
                 if(min_at == -1 || P[j].at < min_at) {
                     min_at = P[j].at;
