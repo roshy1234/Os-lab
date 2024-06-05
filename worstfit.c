@@ -16,14 +16,18 @@ void main() {
     for(int i = 0; i < p; i++) {
         scanf("%d", &psize[i]);
     }
-    // First Fit algorithm
     for(int i = 0; i < p; i++) {
+        int max = -1;
         for(int j = 0; j < b; j++) {
-            if(bsize[j] >= psize[i]) {
-                allocation[i] = j;
-                bsize[j] -= psize[i];
-                break;
+            if(psize[i] <= bsize[j]) {
+                if(max == -1 || bsize[j] > bsize[max]) {
+                    max = j;
+                }
             }
+        }
+        if(max != -1) {
+            allocation[i] = max;
+            bsize[max] -= psize[i];
         }
     }
     printf("\nProcess no.\tProcess size\tBlock no.");
