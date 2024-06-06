@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 void main() {
-    int n,r,need[10][10],alloc[10][10],max[10][10],avail[10],count=0,y=0;
+    int n,r,need[10][10],alloc[10][10],max[10][10],avail[10];
     printf("Enter the number of processes -- ");
     scanf("%d", &n);
     printf("Enter the number of resources -- ");
@@ -37,7 +37,7 @@ void main() {
     for(int i = 0; i < n; i++) {
         flag = 0;
         if(finish[i] == 0) { //process is not finished
-            for(j = 0; j < r; j++) {
+            for(j = 0; j < r; j++) { // check if need is less than available
                 if(need[i][j] > avail[j]) {
                     flag=1;
                     break;
@@ -53,7 +53,7 @@ void main() {
                 }
             }
         }
-    flag = 0;
+    flag = 0; //check if the system is in deadlock
     for(int i = 0; i < n; i++) {
         if(finish[i] == 0) {
             printf("The system is in deadlock\n"); 
