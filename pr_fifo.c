@@ -2,13 +2,12 @@
 
 int main() {
     int i, j, n, f, pf = 0, next = 0, hits = 0;
-    int rs[25], Frame[10], flag[25];
+    int rs[25], Frame[10];
     printf("Enter the length of the reference string -- ");
     scanf("%d", &n);
     printf("Enter the reference string -- ");
     for (i = 0; i < n; i++) {
         scanf("%d", &rs[i]);
-        flag[i] = 0;
     }
     printf("Enter the number of frames -- ");
     scanf("%d", &f);
