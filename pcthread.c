@@ -19,9 +19,9 @@ void *producer(void *args) {
         sem_wait(&empty);
         sem_wait(&mutex);
         //Critical Section
+        printf("Produced item %d\n", item);
         buffer[in] = item++;
         in = (in + 1) % S;
-        printf("Produced item %d\n", item);
         produced++;
         //End of Critical Section
 
