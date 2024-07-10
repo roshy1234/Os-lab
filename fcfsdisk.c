@@ -16,5 +16,6 @@ void main() {
     for(int i=0;i<n;i++) {
         thm += abs(initial - RQ[i]);
         initial = RQ[i];
-}
+    }
+    printf("Total head movement = %d\n", thm);
 }
