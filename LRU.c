@@ -17,7 +17,7 @@ int main() {
         time[i]=0;
     }
 
-    // FIFO Page Replacement
+    // LRU Page Replacement
     for (i = 0; i < n; i++) {
         int found = 0;
         for (j = 0; j < f; j++) {
