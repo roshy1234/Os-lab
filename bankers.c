@@ -43,16 +43,16 @@ void main() {
                     break;
                     }
                 }
-                if(flag == 0) { //need is less than available so complete process
-                    finish[i] = 1;
-                    ans[ind++] = i;
-                    for(int k = 0; k < r; k++) { //adding alloc to available
-                        avail[k] += alloc[i][k];
-                    }
-                    i = -1;
+            if(flag == 0) { //need is less than available so complete process
+                finish[i] = 1;
+                ans[ind++] = i;
+                for(int k = 0; k < r; k++) { //adding alloc to available
+                    avail[k] += alloc[i][k];
                 }
+                i = -1;
             }
         }
+    }
     flag = 0; //check if the system is in deadlock
     for(int i = 0; i < n; i++) {
         if(finish[i] == 0) {
