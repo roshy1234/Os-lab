@@ -1,4 +1,3 @@
-
 #include <stdio.h>
 
 struct process {
@@ -15,10 +14,10 @@ void main() {
         P[i].id = i + 1;
     }
 
-    // Sorting processes based on priority
+    // Sorting processes based on priority first, then arrival time
     for (int i = 0; i < n - 1; i++) {
         for (int j = 0; j < n - i - 1; j++) {
-            if (P[j].pr > P[j + 1].pr) {
+            if (P[j].pr > P[j + 1].pr || (P[j].pr == P[j + 1].pr && P[j].at > P[j + 1].at)) {
                 temp = P[j];
                 P[j] = P[j + 1];
                 P[j + 1] = temp;
