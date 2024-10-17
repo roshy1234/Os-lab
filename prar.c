@@ -68,3 +68,4 @@ void main() {
         printf("%d\t%d\t%d\t%d\t%d\t%d\t%d\n", P[i].id, P[i].at, P[i].pr, P[i].bt, P[i].ct, P[i].tat, P[i].wt);
     }
 }
+
