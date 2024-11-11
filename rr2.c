@@ -16,10 +16,11 @@ void main() {
         P[i].id = i + 1;
         P[i].tbt = P[i].bt;
     }
+
     printf("Gantt Chart -- \n");
-    while(1) {
-        int j, min_at = -1;
-        for(j = 0; j < n; j++) {
+    while(y < n) {
+        int min_at = -1;
+        for(int j = 0; j < n; j++) { //to find minimum arrival time
             if(P[j].bt > 0) {
                 if(min_at == -1 || P[j].at < min_at) {
                     min_at = P[j].at;
@@ -38,17 +39,17 @@ void main() {
             else {
                 x += P[i].bt;
                 P[i].bt = 0;
+                printf("P%d ", P[i].id);
 
                 P[i].tat = x - P[i].at; // TAT = completion time - arrival time
                 P[i].wt = P[i].tat - P[i].tbt; // WT = TAT - burst time
-                printf("P%d ", P[i].id);
                 y++;
-                if(y == n) break;
             }
         }
         i = (i + 1) % n; // move to next process even if current process has 0 burst time
     }
     
+
     printf("\nProcess\tBT\tAT\tTAT\tWT\n");
     for(i = 0; i < n; i++) {
         printf("%d\t%d\t%d\t%d\t%d\n", P[i].id, P[i].at, P[i].tbt, P[i].tat, P[i].wt);

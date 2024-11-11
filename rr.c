@@ -43,3 +43,5 @@ void main() {
         printf("%d\t%d\t%d\t%d\n", P[i].id, P[i].tbt, P[i].tat, P[i].wt);
     }
 }
+    
+      

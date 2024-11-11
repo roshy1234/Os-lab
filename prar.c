@@ -5,7 +5,7 @@ struct process {
 } P[20], temp;
 
 void main() {
-    int n;
+    int n,time = 0, completed = 0;
     printf("Enter the number of processes -- ");
     scanf("%d", &n);
     for (int i = 0; i < n; i++) {
@@ -25,7 +25,6 @@ void main() {
         }
     }
 
-    int time = 0, completed = 0;
     printf("Gantt Chart -- ");
     while (completed < n) {
         int idx = -1;
